@@ -16,7 +16,8 @@ export default function Home() {
     <div>
       <motion.div id="progress-bar" style={{ scaleX }} />
       <div className="mt-96 min-h-screen gap-10 flex flex-col justify-center max-sm:px-4">
-           <h1 className="text-6xl animate-bounce font-bold text-center">
+        <div className="space-y-2 px-[32vw] mt-10">
+          <h1 className="text-6xl animate-bounce font-bold text-center">
             Hello
             <span className="animate-pulse"> 👋</span>
           </h1>
