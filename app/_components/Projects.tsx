@@ -2,13 +2,14 @@
 import { Button } from "@/components/ui/button";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { motion, Variants } from "framer-motion";
-import { Github, Globe2 } from "lucide-react";
+import { Github, GithubIcon, Globe2 } from "lucide-react";
 import Link from "next/link";
 
 interface Project {
@@ -64,7 +65,7 @@ const projects: Project[] = [
       "Tauri",
       "NextJS (Pages)",
     ],
-    source: "https://github.com/maytees/slhs-namecards",
+    source: "https://github.com/maytees/notbad",
   },
   {
     name: "NextJS Starter Template",
@@ -138,6 +139,23 @@ const Projects = () => {
           )
         )}
       </div>
+      <Card className="mt-20">
+        <CardHeader>
+          <CardTitle>And much more..</CardTitle>
+          <CardDescription>
+            View my github profile to see what I've tinkered with and created. I
+            have many small projects, but also many dull unfinished projects.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button className="gap-2 justify-start" asChild>
+            <Link href={"https://github.com/maytees"} target="_blank">
+              <GithubIcon className="size-5" />
+              View my github
+            </Link>
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 };
@@ -169,7 +187,7 @@ const Project = (props: Project) => {
           </div>
           <div className="flex flex-row w-full gap-2">
             {props.website && (
-              <Button asChild size="sm" variant="outline" className="flex-1">
+              <Button asChild size="sm" className="flex-1">
                 <Link
                   href={props.website}
                   className="gap-2 font-normal"
@@ -181,7 +199,7 @@ const Project = (props: Project) => {
               </Button>
             )}
             {props.source && (
-              <Button asChild size="sm" variant="outline" className="flex-1">
+              <Button asChild size="sm" className="flex-1">
                 <Link
                   href={props.source}
                   className="gap-2 font-normal"
