@@ -49,6 +49,16 @@ const Projects = () => {
         />
         <Project
           desc={`
+            Implementation of the Monki Language, from the Writing an Interpreter in Go.
+            I wrote this in Rust, not Go. This is by far the project im most proud of.
+          `}
+          name="Monki"
+          range="June 2023"
+          skills={["Rust", "Lanugage Design"]}
+          source="https://github.com/maytees/monki"
+        />
+        <Project
+          desc={`
           This project is exactly as it sounds, a Wordle clone in the terminal.
           The project also includes keybinds which do different things. The
           project is written in Rust.
