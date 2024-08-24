@@ -16,7 +16,7 @@ const Experience = () => {
         <ExperienceCard
           name="South Lakes Tech Office"
           image="/slhs.png"
-          desc="Volunteer/Student Intern"
+          desc="Student Intern"
           range="Aug 2023 - Aug 2024"
         />
         <ExperienceCard
