@@ -32,8 +32,10 @@ const projects = [
 		href: "https://reviseo.app",
 		source: "https://github.com/maytees/reviseo",
 		year: "2025",
-		description: "Client feedback tool with annotated screenshots on live sites",
-		details: "Built an embeddable widget (single script tag) with invite-only access and a dashboard to track feedback status. Spoke to multiple potential agency owners (B2B) and web freelancers (B2C) to find market validity.",
+		description:
+			"Client feedback tool with annotated screenshots on live sites",
+		details:
+			"Built an embeddable widget (single script tag) with invite-only access and a dashboard to track feedback status. Spoke to multiple potential agency owners (B2B) and web freelancers (B2C) to find market validity.",
 		tech: ["NextJS", "Vite", "Tigris (S3)", "Tailwind CSS", "Framer Motion"],
 	},
 	{
@@ -44,8 +46,17 @@ const projects = [
 		href: "https://spacemintai.com",
 		source: "",
 		description: "Floor plan to staged interior renders (Acquired)",
-		details: "Implemented upload → style selection → image generation flow with credit-based pricing and downloads. Acquired 14+ users prior to acquisition through social media marketing.",
-		tech: ["Vercel AI SDK", "NextJS", "Tailwind", "Google Gemini", "Posthog", "Tigris (S3)", "Polar Payments"],
+		details:
+			"Implemented upload → style selection → image generation flow with credit-based pricing and downloads. Acquired 14+ users prior to acquisition through social media marketing.",
+		tech: [
+			"Vercel AI SDK",
+			"NextJS",
+			"Tailwind",
+			"Google Gemini",
+			"Posthog",
+			"Tigris (S3)",
+			"Polar Payments",
+		],
 	},
 	{
 		num: "03",
@@ -55,7 +66,8 @@ const projects = [
 		source: "https://github.com/maytees/arcade",
 		year: "2023",
 		description: "Survival minigame plugin for Minecraft",
-		details: "6,000+ views, 450+ downloads. Refactored the entire plugin from Java to Kotlin; open-source project with customizable game modes.",
+		details:
+			"6,000+ views, 450+ downloads. Refactored the entire plugin from Java to Kotlin; open-source project with customizable game modes.",
 		tech: ["Java", "Kotlin", "PaperMC"],
 	},
 	{
@@ -66,7 +78,8 @@ const projects = [
 		source: "https://github.com/maytees/denis",
 		year: "2023",
 		description: "Custom DNS server implementing RFC 1035 in Go",
-		details: "Implemented core parts of RFC 1035 (UDP listener, packet parsing, response construction). Currently extending toward lookup tables, forwarding, caching, and a web interface.",
+		details:
+			"Implemented core parts of RFC 1035 (UDP listener, packet parsing, response construction). Currently extending toward lookup tables, forwarding, caching, and a web interface.",
 		tech: ["Go"],
 	},
 	{
@@ -77,7 +90,8 @@ const projects = [
 		source: "https://github.com/epsonia/epsonia-rs",
 		year: "2023",
 		description: "CyberPatriot-style scoring engine",
-		details: "Evaluates system state against predefined checks (users, groups, configs) and applies points and penalties. Rewrote from TypeScript (Deno) to Rust with modular checks and stricter error handling.",
+		details:
+			"Evaluates system state against predefined checks (users, groups, configs) and applies points and penalties. Rewrote from TypeScript (Deno) to Rust with modular checks and stricter error handling.",
 		tech: ["Rust", "TypeScript"],
 	},
 ];
@@ -175,7 +189,7 @@ function ProjectCard({
 								</Link>
 							) : (
 								<span className="text-sm text-muted-foreground/50 font-mono">
-									Source Closed
+									Closed Source
 								</span>
 							)}
 						</motion.div>

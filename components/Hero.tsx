@@ -70,12 +70,12 @@ const Hero = () => {
 		<motion.section
 			style={{ y, opacity, scale }}
 			ref={heroRef}
-			className="px-40 mt-48"
+			className="px-6 md:px-12 lg:px-40 mt-24 md:mt-36 lg:mt-48"
 		>
 			<TextEffect
 				per="char"
 				preset="fade-in-blur"
-				className="text-[72px] leading-[1.1] tracking-[-0.03em] font-bold"
+				className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.1] tracking-[-0.03em] font-bold"
 			>
 				Hello, I&apos;m Maytham Ajam
 			</TextEffect>
@@ -84,7 +84,7 @@ const Hero = () => {
 				whileInView={{ filter: "blur(0px)", opacity: 1 }}
 				transition={{ delay: 0.8, duration: 0.8 }}
 				viewport={{ once: true }}
-				className="text-[20px] leading-[1.3] tracking-[-0.01em] font-semibold text-muted-foreground max-w-3xl"
+				className="text-base md:text-lg lg:text-[20px] leading-[1.4] md:leading-[1.3] tracking-[-0.01em] font-semibold text-muted-foreground max-w-3xl mt-4 md:mt-0"
 			>
 				I&apos;m 18, a student at George Mason University, programmer for 6
 				years, based in the{" "}
@@ -106,7 +106,7 @@ const Hero = () => {
 				</Link>
 				. Here are some tools I use often -
 			</motion.h2>
-			<ul className="mt-3 flex flex-row items-center gap-2">
+			<ul className="mt-3 flex flex-row flex-wrap items-center gap-2">
 				<AnimatePresence>
 					{skills.map((skill) => (
 						<SkillBadge
@@ -127,9 +127,9 @@ const Hero = () => {
 				whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
 				transition={{ delay: 2, duration: 0.8, type: "spring", bounce: 0.2 }}
 				viewport={{ once: true }}
-				className="mt-4 flex flex-row gap-2 items-center"
+				className="mt-4 flex flex-col sm:flex-row gap-2 items-start sm:items-center"
 			>
-				<Button size={"lg"} asChild>
+				<Button size={"lg"} className="w-full sm:w-auto" asChild>
 					<Link
 						target="_blank"
 						href={"https://github.com/maytees?tab=repositories"}
@@ -138,7 +138,7 @@ const Hero = () => {
 						See Repositories
 					</Link>
 				</Button>
-				<Button size={"lg"} variant={"outline"} asChild>
+				<Button size={"lg"} variant={"outline"} className="w-full sm:w-auto" asChild>
 					<Link href={"/resume.pdf"} target="_blank">
 						<PaperclipIcon className="size-3.5 mt-[0.8]" />
 						My Resume
@@ -146,7 +146,7 @@ const Hero = () => {
 				</Button>
 			</motion.div>
 
-			<ArrowDown className="animate-bounce mt-[30dvh] w-full self-center text-muted-foreground" />
+			<ArrowDown className="animate-bounce mt-[20dvh] md:mt-[30dvh] w-full self-center text-muted-foreground" />
 		</motion.section>
 	);
 };
