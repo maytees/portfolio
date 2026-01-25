@@ -12,7 +12,7 @@ const Navbar = () => {
 						<BadgeQuestionMark className="size-3 text-muted-foreground/50 font-semibold absolute top-0 -right-4" />
 					</Link>
 				</TooltipTrigger>
-				<TooltipContent className="max-w-42">
+				<TooltipContent className="max-w-42 text-center">
 					Matees is the name I use online and you may see maytees as well.
 				</TooltipContent>
 			</Tooltip>
