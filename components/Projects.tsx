@@ -32,8 +32,8 @@ const projects = [
 		href: "https://reviseo.app",
 		source: "https://github.com/maytees/reviseo",
 		year: "2025",
-		description:
-			"Client feedback tool with annotated screenshots on live sites",
+		description: "Client feedback tool with annotated screenshots on live sites",
+		details: "Built an embeddable widget (single script tag) with invite-only access and a dashboard to track feedback status. Spoke to multiple potential agency owners (B2B) and web freelancers (B2C) to find market validity.",
 		tech: ["NextJS", "Vite", "Tigris (S3)", "Tailwind CSS", "Framer Motion"],
 	},
 	{
@@ -44,6 +44,7 @@ const projects = [
 		href: "https://spacemintai.com",
 		source: "",
 		description: "Floor plan to staged interior renders (Acquired)",
+		details: "Implemented upload → style selection → image generation flow with credit-based pricing and downloads. Acquired 14+ users prior to acquisition through social media marketing.",
 		tech: ["Vercel AI SDK", "NextJS", "Tailwind", "Google Gemini", "Posthog", "Tigris (S3)", "Polar Payments"],
 	},
 	{
@@ -53,7 +54,8 @@ const projects = [
 		href: "https://modrinth.com/plugin/arcade",
 		source: "https://github.com/maytees/arcade",
 		year: "2023",
-		description: "Survival minigame plugin, 6K+ views, 450+ downloads",
+		description: "Survival minigame plugin for Minecraft",
+		details: "6,000+ views, 450+ downloads. Refactored the entire plugin from Java to Kotlin; open-source project with customizable game modes.",
 		tech: ["Java", "Kotlin", "PaperMC"],
 	},
 	{
@@ -64,6 +66,7 @@ const projects = [
 		source: "https://github.com/maytees/denis",
 		year: "2023",
 		description: "Custom DNS server implementing RFC 1035 in Go",
+		details: "Implemented core parts of RFC 1035 (UDP listener, packet parsing, response construction). Currently extending toward lookup tables, forwarding, caching, and a web interface.",
 		tech: ["Go"],
 	},
 	{
@@ -73,7 +76,8 @@ const projects = [
 		href: "",
 		source: "https://github.com/epsonia/epsonia-rs",
 		year: "2023",
-		description: "CyberPatriot-style scoring engine in Rust",
+		description: "CyberPatriot-style scoring engine",
+		details: "Evaluates system state against predefined checks (users, groups, configs) and applies points and penalties. Rewrote from TypeScript (Deno) to Rust with modular checks and stricter error handling.",
 		tech: ["Rust", "TypeScript"],
 	},
 ];
@@ -121,8 +125,13 @@ function ProjectCard({
 						>
 							{project.title}
 						</motion.h3>
+						<p className="text-muted-foreground mt-2 max-w-md text-sm md:text-base">
+							{project.description}
+						</p>
+
+						{/* Details on hover */}
 						<motion.p
-							className="text-muted-foreground mt-2 max-w-md"
+							className="text-muted-foreground/80 mt-2 max-w-md text-sm"
 							initial={{ opacity: 0, height: 0 }}
 							animate={{
 								opacity: isHovered ? 1 : 0,
@@ -130,7 +139,7 @@ function ProjectCard({
 							}}
 							transition={{ duration: 0.3 }}
 						>
-							{project.description}
+							{project.details}
 						</motion.p>
 
 						{/* Links */}
