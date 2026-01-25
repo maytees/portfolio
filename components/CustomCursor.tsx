@@ -8,7 +8,7 @@ const CustomCursor = () => {
 
 	return (
 		<motion.div
-			className="fixed animate-caret-blink font-mono font-extralight tracking-widest text-muted-foreground pointer-events-none z-99999"
+			className="fixed animate-caret-blink font-serif font-thin tracking-widest text-muted-foreground pointer-events-none z-99999"
 			// Use animate prop to move the cursor based on mouse position
 			// Subtract half of the cursor's size (e.g., 16px for a 32x32 cursor)
 			// so the center of the cursor aligns with the mouse position.

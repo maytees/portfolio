@@ -1,13 +1,17 @@
 import Hero from "@/components/Hero";
+import { Journey } from "@/components/Journey";
 import Navbar from "@/components/Navbar";
 import { Projects } from "@/components/Projects";
+import { About } from "@/components/Skills";
 
 export default function Page() {
 	return (
-		<div className="pb-[500vh]">
+		<div>
 			<Navbar />
 			<Hero />
 			<Projects />
+			<About />
+			<Journey />
 		</div>
 	);
 }

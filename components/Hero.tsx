@@ -1,13 +1,12 @@
 "use client";
 import { ArrowDown, Github, PaperclipIcon } from "lucide-react";
-import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import Link from "next/link";
 import { useRef } from "react";
 import type { IconType } from "react-icons";
 import { FaReact } from "react-icons/fa";
 import { PiFigmaLogo } from "react-icons/pi";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
-import { SkillBadge } from "./SkillBadge";
 import { Button } from "./ui/button";
 import { TextEffect } from "./ui/text-effect";
 
@@ -70,7 +69,7 @@ const Hero = () => {
 		<motion.section
 			style={{ y, opacity, scale }}
 			ref={heroRef}
-			className="px-6 md:px-12 lg:px-40 mt-24 md:mt-36 lg:mt-48"
+			className="px-6 md:px-12 lg:px-24 mt-24 md:mt-36 lg:mt-48"
 		>
 			<TextEffect
 				per="char"
@@ -104,9 +103,9 @@ const Hero = () => {
 				>
 					my Github
 				</Link>
-				. Here are some tools I use often -
+				.
 			</motion.h2>
-			<ul className="mt-3 flex flex-row flex-wrap items-center gap-2">
+			{/* <ul className="mt-3 flex flex-row flex-wrap items-center gap-2">
 				<AnimatePresence>
 					{skills.map((skill) => (
 						<SkillBadge
@@ -120,7 +119,7 @@ const Hero = () => {
 						/>
 					))}
 				</AnimatePresence>
-			</ul>
+			</ul> */}
 
 			<motion.div
 				initial={{ filter: "blur(20px)", opacity: 0, y: 100 }}
@@ -138,7 +137,12 @@ const Hero = () => {
 						See Repositories
 					</Link>
 				</Button>
-				<Button size={"lg"} variant={"outline"} className="w-full sm:w-auto" asChild>
+				<Button
+					size={"lg"}
+					variant={"outline"}
+					className="w-full sm:w-auto"
+					asChild
+				>
 					<Link href={"/resume.pdf"} target="_blank">
 						<PaperclipIcon className="size-3.5 mt-[0.8]" />
 						My Resume

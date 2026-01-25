@@ -3,26 +3,8 @@
 import { ArrowUpRight } from "lucide-react";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 import Link from "next/link";
-import { useRef, useState } from "react";
-
-const techColors: Record<string, string> = {
-	NextJS: "bg-black text-white dark:bg-white dark:text-black",
-	Vite: "bg-purple-500 text-white",
-	"Tailwind CSS": "bg-cyan-500 text-white",
-	Tailwind: "bg-cyan-500 text-white",
-	"Framer Motion": "bg-pink-500 text-white",
-	"Vercel AI SDK": "bg-black text-white dark:bg-white dark:text-black",
-	"Google Gemini": "bg-blue-500 text-white",
-	Posthog: "bg-blue-600 text-white",
-	"Tigris (S3)": "bg-orange-500 text-white",
-	"Polar Payments": "bg-indigo-500 text-white",
-	Java: "bg-red-600 text-white",
-	Kotlin: "bg-purple-600 text-white",
-	PaperMC: "bg-green-600 text-white",
-	Go: "bg-cyan-600 text-white",
-	Rust: "bg-orange-600 text-white",
-	TypeScript: "bg-blue-600 text-white",
-};
+import { useEffect, useRef, useState } from "react";
+import { TechBadge } from "./TechBadge";
 
 const projects = [
 	{
@@ -105,14 +87,28 @@ function ProjectCard({
 }) {
 	const ref = useRef(null);
 	const [isHovered, setIsHovered] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 	const mainLink = project.href || project.source;
+
+	useEffect(() => {
+		const checkMobile = () => {
+			const mobile = window.innerWidth < 768;
+			setIsMobile(mobile);
+			if (mobile) {
+				setIsHovered(true);
+			}
+		};
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
 
 	return (
 		<motion.div
 			ref={ref}
 			className="group block py-8 md:py-12 border-b border-border relative"
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
+			onMouseEnter={() => !isMobile && setIsHovered(true)}
+			onMouseLeave={() => !isMobile && setIsHovered(false)}
 			initial={{ opacity: 0, y: 50 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -205,12 +201,7 @@ function ProjectCard({
 							transition={{ duration: 0.3, delay: 0.05 }}
 						>
 							{project.tech.map((tech) => (
-								<span
-									key={tech}
-									className={`px-2 py-0.5 text-xs font-mono rounded ${techColors[tech] || "bg-muted text-muted-foreground"}`}
-								>
-									{tech}
-								</span>
+								<TechBadge key={tech} name={tech} />
 							))}
 						</motion.div>
 					</div>
