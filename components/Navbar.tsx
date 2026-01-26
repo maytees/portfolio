@@ -26,30 +26,6 @@ const Navbar = () => {
 
 			{/* Desktop Navigation */}
 			<ul className="hidden md:flex flex-row items-center gap-6 lg:gap-10">
-				<li>
-					<Link
-						href="#work"
-						className="text-muted-foreground hover:scale-105 transition-all ease-in-out duration-200 hover:text-foreground"
-					>
-						Projects
-					</Link>
-				</li>
-				<li>
-					<Link
-						href="#about"
-						className="text-muted-foreground hover:scale-105 transition-all ease-in-out duration-200 hover:text-foreground"
-					>
-						About
-					</Link>
-				</li>
-				<li>
-					<Link
-						href="#contact"
-						className="text-muted-foreground hover:scale-105 transition-all ease-in-out duration-200 hover:text-foreground"
-					>
-						Contact
-					</Link>
-				</li>
 				<div className="flex flex-row gap-2 items-center">
 					<Link
 						href={"https://www.linkedin.com/in/maythamajam/"}
@@ -82,33 +58,6 @@ const Navbar = () => {
 			{isOpen && (
 				<div className="absolute top-20 left-0 right-0 bg-background border-b border-border md:hidden z-50">
 					<ul className="flex flex-col items-center gap-6 py-8">
-						<li>
-							<Link
-								href="#work"
-								onClick={() => setIsOpen(false)}
-								className="text-muted-foreground hover:text-foreground text-lg"
-							>
-								Projects
-							</Link>
-						</li>
-						<li>
-							<Link
-								href="#about"
-								onClick={() => setIsOpen(false)}
-								className="text-muted-foreground hover:text-foreground text-lg"
-							>
-								About
-							</Link>
-						</li>
-						<li>
-							<Link
-								href="#contact"
-								onClick={() => setIsOpen(false)}
-								className="text-muted-foreground hover:text-foreground text-lg"
-							>
-								Contact
-							</Link>
-						</li>
 						<div className="flex flex-row gap-4 items-center mt-2">
 							<Link
 								href={"https://www.linkedin.com/in/maythamajam/"}

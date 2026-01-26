@@ -70,26 +70,38 @@ function TimelineItem({
 	milestone: (typeof milestones)[0];
 	index: number;
 }) {
+	const itemRef = useRef(null);
 	const [isHovered, setIsHovered] = useState(false);
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+
+	// For mobile: expand when item is in center of viewport
+	const isInView = useInView(itemRef, {
+		margin: "-40% 0px -40% 0px", // Active when in middle 20% of viewport
+	});
 
 	useEffect(() => {
 		const checkMobile = () => {
 			const mobile = window.innerWidth < 768;
 			setIsMobile(mobile);
-			if (mobile) {
-				setIsExpanded(true);
-				setIsHovered(true);
-			}
 		};
 		checkMobile();
 		window.addEventListener("resize", checkMobile);
 		return () => window.removeEventListener("resize", checkMobile);
 	}, []);
 
+	// On mobile, expand/collapse based on scroll position
+	useEffect(() => {
+		if (isMobile) {
+			// eslint-disable-next-line react-hooks/set-state-in-effect
+			setIsHovered(isInView);
+			setIsExpanded(isInView);
+		}
+	}, [isMobile, isInView]);
+
 	return (
 		<motion.div
+			ref={itemRef}
 			className="group py-8 md:py-12 border-b border-border relative md:cursor-pointer"
 			onMouseEnter={() => !isMobile && setIsHovered(true)}
 			onMouseLeave={() => !isMobile && setIsHovered(false)}
@@ -190,7 +202,6 @@ export function Journey() {
 	});
 
 	const x = useTransform(scrollYProgress, [0, 1], [100, -100]);
-	const lineHeight = useTransform(scrollYProgress, [0, 0.8], ["0%", "100%"]);
 
 	return (
 		<section
@@ -205,14 +216,6 @@ export function Journey() {
 			>
 				JOURNEY
 			</motion.div>
-
-			{/* Animated scroll progress line */}
-			<div className="fixed left-4 md:left-6 top-1/2 -translate-y-1/2 h-[40vh] w-1.5 bg-border/30 rounded-full hidden lg:block z-50 overflow-hidden">
-				<motion.div
-					className="w-full bg-gradient-to-b from-primary to-accent rounded-full"
-					style={{ height: lineHeight }}
-				/>
-			</div>
 
 			<div className="relative z-10">
 				{/* Header */}
