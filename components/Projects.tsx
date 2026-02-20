@@ -58,7 +58,7 @@ const projects = [
 		category: "Systems",
 		href: "",
 		source: "https://github.com/maytees/denis",
-		year: "2023",
+		year: "2026",
 		description: "Custom DNS server implementing RFC 1035 in Go",
 		details:
 			"Implemented core parts of RFC 1035 (UDP listener, packet parsing, response construction). Currently extending toward lookup tables, forwarding, caching, and a web interface.",
