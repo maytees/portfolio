@@ -27,7 +27,7 @@ const milestones = [
 	},
 	{
 		year: "2022",
-		age: "16",
+		age: "15",
 		title: "WEB DEVELOPMENT",
 		tech: "HTML, CSS, JavaScript",
 		short: "The pandemic pivot",
@@ -36,7 +36,7 @@ const milestones = [
 	},
 	{
 		year: "2023",
-		age: "20",
+		age: "16",
 		title: "SYSTEMS",
 		tech: "Rust / Systems Programming / Cybersecurity",
 		short: "Down to the metal",
@@ -45,7 +45,7 @@ const milestones = [
 	},
 	{
 		year: "2024",
-		age: "18",
+		age: "17",
 		title: "GOING DEEPER",
 		tech: "React, Next.js, TypeScript, and Tailwind",
 		short: "Framework enlightenment",
@@ -54,7 +54,7 @@ const milestones = [
 	},
 	{
 		year: "2026",
-		age: "21",
+		age: "18",
 		title: "PRESENT",
 		tech: "Full Stack + Systems",
 		short: "Ready for what's next",
